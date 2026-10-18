@@ -14,7 +14,11 @@ computer = random.randint(1, 100)
 i = 1
 while True:
 
-    number = int(input("请输入数字："))
+    try:
+        number = int(input("请输入数字："))
+    except ValueError:
+        print("请输入整数，范围为1-100")
+        continue
     if number <= 100:
         if number > computer:
             print(f"您输入的数字过大，范围为 0-{number}")
